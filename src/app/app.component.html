@@ -1,0 +1,53 @@
+<h1>Student Form</h1>
+<div class="outer-wrapper">
+  <div class="studemt-list-container">
+    <div class="student-list-header"> Students </div>
+    <div class="student-list-data-container" *ngFor="let item of studentList" (click)="prefill(item)">
+      <div class="student-list-left-data">
+        {{item.firstName}} {{item.lastName}}
+      </div>
+      <div class="student-list-right-data">
+        {{item.rollNumber}}
+      </div>
+    </div>
+    <div class="add-new">
+      <button (click)="addNew()">Add new</button>
+    </div>
+  </div>
+  <div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-wrapper">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input formControlName="firstName" id="firstName" type="text" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input formControlName="lastName" id="lastName" type="text" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-wrapper">
+        <div class="form-group">
+          <label for="rollNumber">Roll Number</label>
+          <input formControlName="rollNumber" id="rollNumber" type="number" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input formControlName="age" id="age" type="number" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <input formControlName="gender" id="gender" type="text" class="form-control">
+      </div>
+      <div class="button-container">
+        <button *ngIf="!isUpdate" class="btn btn-primary" type="submit" [disabled]="!form.valid">Add</button>
+        <button *ngIf="isUpdate" class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

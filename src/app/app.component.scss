@@ -1,0 +1,69 @@
+.outer-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    .studemt-list-container {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        .student-list-header{
+            padding: 5px 10px;
+            background-color: #1b26f7;
+            color: white;
+        }
+        .student-list-data-container {
+            display: flex;
+            padding: 5px 10px;
+            background-color: #aeb2fc;
+            cursor: pointer;
+            justify-content: space-between;
+            .student-list-left-data {
+
+            }
+            .student-list-right-data {
+                padding-left: 15px;
+            }
+            &:nth-child(odd) {
+                background-color: #878dfa;
+            }
+            &:hover {
+                background-color: #555dfa;
+            }
+        }
+        .add-new {    
+            padding: 20px 0;
+            button {
+                background-color: #1b26f7;
+                color: white;
+                padding: 5px 10px;
+            }
+        }
+    }
+    .form-container {
+        flex: 1;
+        margin: 30px;    
+        border: 1px solid black;
+        max-width: 500px;
+        .form-wrapper {
+            display: flex;    
+            flex-wrap: wrap;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 20px;
+            input {
+                max-width: 158px;
+            }
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            button {
+                margin: 20px;
+                padding: 5px 10px;
+                background-color: #1b26f7;
+                color: white;
+            }
+        }
+    }
+}
